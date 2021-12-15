@@ -1,0 +1,249 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+#wrapper {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+}
+
+#side-nav {
+    display: flex;
+    flex-direction: column;
+    background-color: #eeeeee;
+    height: 100vh;
+    padding: 0 45px;
+    position: sticky;
+    top: 0;
+    bottom: 0;
+}
+
+#side-nav-links {
+    list-style: none;
+}
+
+#side-nav-links .nav-link {
+    margin: 25px 0;
+}
+
+.nav-link img {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+}
+
+main {
+    margin: 25px 20%;
+}
+
+#main .add-tweet {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    border: 1px solid #eeeeee;
+    padding: 20px;
+    border-radius: 25px;
+}
+
+.add-tweet textarea {
+    outline: 0;
+    height: 54px;
+    padding-left: 5px;
+    padding-top: 5px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    border-color: #eeeeee;
+}
+
+.add-tweet button {
+    width: 100px;
+    height: 35px;
+    outline: 0;
+    border: 0;
+    border-radius: 25px;
+    background-color: #268fcc;
+}
+
+#tweets-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.tweet-item {
+    display: flex;
+    border: 1px solid #eeeeee;
+    border-radius: 25px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.tweet-item .profile-img img {
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+}
+
+.tweet-content {
+    padding-left: 10px;
+}
+
+.tweet-author-label {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.tweet-author-handle,
+.tweet-time-created {
+    font-weight: 400;
+    color: #6e6e6e;
+}
+
+.dot-separator {
+    width: 3px;
+    height: 3px;
+    border-radius: 99%;
+    background-color: #000;
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+.tweet-message p {
+    padding-top: 5px;
+    margin-bottom: 10px;
+}
+
+.tweet-message img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.tweet-social {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.tweet-social .icon i {
+    padding: 5px;
+}
+
+#aside {
+    height: auto;
+    padding: 25px;
+    background-color: #eeeeee;
+}
+
+.aside-nav {
+    list-style: none;
+}
+
+.aside-nav .nav-link {
+    display: flex;
+    margin: 15px 0;
+    align-items: center;
+}
+
+.aside-nav .nav-link img {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    margin-right: 8px;
+}
+
+/* @media (max-width:411px) {
+    #top-nav {
+        display: none;
+    }
+
+    #header {
+        height: 65px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        border-bottom: 1px solid #000;
+        padding: 10px 20px;
+    }
+
+    #header img {
+        height: 50px;
+        width: 50px;
+        border-radius: 25px;
+    }
+
+    #main {
+        margin: 20px;
+    }
+
+    #tweets-list {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .tweet-item {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .tweet-item .profile-img img {
+        height: 50px;
+        width: 50px;
+        border-radius: 25px;
+    }
+
+    .tweet-content {
+        padding-left: 10px;
+    }
+
+    .tweet-author-label {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .tweet-author-handle,
+    .tweet-time-created {
+        font-weight: 400;
+        color: #6e6e6e;
+    }
+
+    .dot-separator {
+        width: 3px;
+        height: 3px;
+        border-radius: 99%;
+        background-color: #000;
+        margin-left: 6px;
+        margin-right: 6px;
+    }
+
+    .tweet-message p {
+        padding-top: 5px;
+        margin-bottom: 10px;
+    }
+
+    .tweet-message img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 20px;
+        margin-bottom: 10px;
+    }
+
+    .tweet-social {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .tweet-social .icon i {
+        padding: 5px;
+    }
+} */
