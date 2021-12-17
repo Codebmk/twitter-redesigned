@@ -3,6 +3,22 @@
     padding: 0;
 }
 
+.row {
+    display: flex;
+}
+
+button {
+    outline: 0;
+    border: 0;
+    background-color: #ffffff;
+    color: #000;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
 body {
     width: 100%;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
@@ -292,6 +308,66 @@ main {
     border-radius: 8px;
     padding-left: 10px;
     margin-top: 8px;
+}
+
+/* profile page styles */
+#profile-top-nav {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    padding: 10px 4%;
+    background-color: #268fcc;
+}
+
+#profile-top-nav img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    margin-right: 20px;
+}
+
+#profile-top-nav .profile-details h1 a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+#profile-top-nav .profile-details h4 {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 5px 0;
+}
+
+.profile_location {
+    padding-right: 40px;
+}
+
+.tweet-post-btn {
+    height: 25px;
+    padding: 3px 10px;
+    border-radius: 8px;
+    margin-top: 15px;
+    color: #268fcc;
+}
+
+#left-side-nav {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+#profile-main-container {
+    margin: 10px 30%;
+}
+
+.back-button {
+    position: absolute;
+    top: 10px;
+    left: 4%;
+    text-decoration: underline;
+    color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
 }
 /* @media (max-width:411px) {
     #top-nav {
