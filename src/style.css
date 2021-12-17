@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .row {
@@ -25,7 +26,6 @@ body {
 }
 
 #wrapper {
-    margin: 0;
     display: grid;
     grid-template-columns: 20% 60% 20%;
 }
@@ -35,7 +35,7 @@ body {
     flex-direction: column;
     background-color: #eeeeee;
     height: 100vh;
-    padding: 0 0 0 35px;
+    padding: 0 0 0 30px;
     position: sticky;
     top: 0;
     bottom: 0;
@@ -43,6 +43,10 @@ body {
 
 #side-nav-links {
     list-style: none;
+}
+
+#profile-name {
+    font-weight: bold;
 }
 
 #side-nav-links .nav-link {
@@ -59,7 +63,6 @@ body {
     color: #003f5c;
 }
 
-
 #side-nav-links .profile-link {
     display: flex;
     align-items: center;
@@ -67,18 +70,18 @@ body {
     padding-bottom: 15px;
 }
 
-#side-nav-links .nav-link img {
+#side-nav-links .profile-link img {
     width: 50px;
     height: 50px;
     border-radius: 25px;
     margin-right: 10px;
 }
 
-main {
+#main {
     margin: 25px 20%;
 }
 
-#main .add-tweet {
+.add-tweet-form {
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
@@ -87,7 +90,7 @@ main {
     border-radius: 25px;
 }
 
-.add-tweet textarea {
+.add-tweet-form textarea {
     outline: 0;
     height: 54px;
     padding-left: 5px;
@@ -97,7 +100,7 @@ main {
     border-color: #eeeeee;
 }
 
-.add-tweet button {
+.add-tweet-form button {
     width: 100px;
     height: 35px;
     outline: 0;
