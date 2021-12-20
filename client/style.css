@@ -45,6 +45,10 @@ body {
     list-style: none;
 }
 
+.nav-link #brand-name {
+    color: #850000;
+}
+
 #profile-name {
     font-weight: bold;
 }
@@ -315,7 +319,7 @@ body {
 
 /* profile page styles */
 #profile-top-nav {
-    height: 200px;
+    height: 250px;
     display: flex;
     align-items: center;
     padding: 10px 4%;
@@ -339,6 +343,10 @@ body {
     font-size: 16px;
     font-weight: 500;
     margin: 5px 0;
+}
+
+#profile-top-nav .profile-details p {
+    width: 50%;
 }
 
 .profile_location {
