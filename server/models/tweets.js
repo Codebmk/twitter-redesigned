@@ -6,7 +6,7 @@ const TweetSchema = new Schema({
         type: Date,
         default: Date.now()
     },
-    text: {
+    text_message: {
         type: String,
         maxlength: 120
     },
@@ -15,7 +15,7 @@ const TweetSchema = new Schema({
     number_of_impressions: Number,
     username: String,
     user_location: String,
-    author_id: Number
+    author_id: String
 });
 
 module.exports = Tweet = mongoose.model("tweet", TweetSchema);
