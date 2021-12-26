@@ -29,12 +29,14 @@ router.post('/', (req, res) => {
                 userhandle,
                 isVerified
             });
+
+            newUserProfile
+                .save()
+                .then(user_profile => res.json(user_profile))
         });
-    
-    newUserProfile
-        .save()
-        .then(user_profile => res.json(user_profile));
 });
+    
+    
 
 
 // Get All User Profiles
