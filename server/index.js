@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const express = require("express");
-const bodyParser = require("body-parser");
 
 const user_profiles = require("./routes/api/user_profile");
 const tweets = require("./routes/api/tweets");
@@ -10,7 +9,7 @@ const user_following = require("./routes/api/user_following");
 
 const app = express();
 
-app.use(bodyParser.json());
+app.use(express.json());
 
 // Connect to Mongo
 mongoose.connect('mongodb://localhost/twitter_db')

@@ -12,7 +12,8 @@ const UserProfileSchema = new Schema({
   },
   email_address: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   date_created: {
     type: Date,
@@ -32,7 +33,7 @@ const UserProfileSchema = new Schema({
   userhandle: {
     type: String,
     required: true,
-    unique: 1
+    unique: true
   }
 });
 

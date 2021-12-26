@@ -5,17 +5,32 @@ const UserProfile = require("../../models/user_profile");
 
 // Add New User Profile
 router.post('/', (req, res) => {
-    const newUserProfile = new UserProfile({
-        username: req.body.username,
-        description: req.body.description,
-        date_of_birth: req.body.date_of_birth,
-        email_address: req.body.email_address,
-        password: req.body.password,
-        location: req.body.location,
-        website_url: req.body.website_url,
-        userhandle: req.body.userhandle,
-        isVerified: req.body.isVerified
-    });
+    const { username, description, date_of_birth, email_address, password, location, website_url, userhandle, isVerified } = req.body;
+
+    // Simple Validation
+    if (!username || !description || !userhandle || !password || !date_of_birth) {
+        return res.status(400).json({ message: "Please fill in all the required fields!" });
+    }
+
+    // Check if Profile already exists
+    UserProfile
+        .findOne({ email })
+        .then(user => {
+            if (user) return res.status(400).json({ message: "Account already exists" });
+
+            const newUserProfile = new UserProfile({
+                username,
+                description,
+                date_of_birth,
+                email_address,
+                password,
+                location,
+                website_url,
+                userhandle,
+                isVerified
+            });
+        });
+    
     newUserProfile
         .save()
         .then(user_profile => res.json(user_profile));
