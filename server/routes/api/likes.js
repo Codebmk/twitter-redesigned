@@ -37,3 +37,5 @@ router.delete('/:user_id/:tweet_id', (req, res) => {
         .then(like => like.remove().then(() => res.json({ success: true })))
         .catch(() => res.status(404).json({ success: false }));
 });
+
+module.exports = router;

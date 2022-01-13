@@ -1,0 +1,62 @@
+#profile-top-nav {
+    height: 250px;
+    display: flex;
+    align-items: center;
+    padding: 10px 4%;
+    background-color: #268fcc;
+}
+
+#profile-top-nav img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    margin-right: 20px;
+}
+
+#profile-top-nav .profile-details h1 a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+#profile-top-nav .profile-details h4 {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 5px 0;
+}
+
+#profile-top-nav .profile-details p {
+    width: 50%;
+}
+
+.profile_location {
+    padding-right: 40px;
+}
+
+.tweet-post-btn {
+    height: 25px;
+    padding: 3px 10px;
+    border-radius: 8px;
+    margin-top: 15px;
+    color: #268fcc;
+}
+
+#left-side-nav {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+#profile-main-container {
+    margin: 10px 30%;
+}
+
+.back-button {
+    position: absolute;
+    top: 10px;
+    left: 4%;
+    text-decoration: underline;
+    color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+}

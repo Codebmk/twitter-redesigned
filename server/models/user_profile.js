@@ -7,8 +7,7 @@ const UserProfileSchema = new Schema({
     required: true
   },
   date_of_birth: {
-    type: Date,
-    required: true
+    type: Date
   },
   email_address: {
     type: String,

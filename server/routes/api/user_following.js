@@ -36,3 +36,5 @@ router.delete('/:follower_id/:followed_id', (req, res) => {
             .then(() => res.json({ success: true })))
         .catch(() => res.status(404).json({ success: false }));
 });
+
+module.exports = router;

@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const bcrypt = require("bcryptjs");
 
 const UserProfile = require("../../models/user_profile");
 
@@ -8,13 +9,13 @@ router.post('/', (req, res) => {
     const { username, description, date_of_birth, email_address, password, location, website_url, userhandle, isVerified } = req.body;
 
     // Simple Validation
-    if (!username || !description || !userhandle || !password || !date_of_birth) {
+    if (!username || !description || !email_address || !password || !userhandle) {
         return res.status(400).json({ message: "Please fill in all the required fields!" });
     }
 
     // Check if Profile already exists
     UserProfile
-        .findOne({ email })
+        .findOne({ email_address })
         .then(user => {
             if (user) return res.status(400).json({ message: "Account already exists" });
 
@@ -30,15 +31,32 @@ router.post('/', (req, res) => {
                 isVerified
             });
 
-            newUserProfile
-                .save()
-                .then(user_profile => res.json(user_profile))
+            bcrypt.genSalt(10, (err, salt) => {
+                bcrypt.hash(newUserProfile.password, salt, (err, hash) => {
+                    if (err) throw err;
+                    newUserProfile.password = hash;
+                    newUserProfile
+                        .save()
+                        .then(user_profile => res.json({
+                            user: {
+                                id: user_profile.id,
+                                username: user_profile.username,
+                                description: user_profile.description,
+                                email_address: user_profile.email_address,
+                                location: user_profile.location,
+                                date_of_birth: user_profile.date_of_birth,
+                                isVerified: user_profile.isVerified,
+                                user_handle: user_profile.userhandle,
+                                website_url: user_profile.website_url
+                            }
+                        }));
+                })
+            });
+
+            
         });
 });
     
-    
-
-
 // Get All User Profiles
 router.get('/', (req, res) => {
     UserProfile
