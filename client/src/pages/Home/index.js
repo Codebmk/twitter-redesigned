@@ -31,7 +31,7 @@ function Home() {
 
           <div id="tweets-list">
           {/* List of tweets */}
-          {tweetsList.map(tweet =>{
+          {tweetsList ? tweetsList.map(tweet =>{
             return (
               <div className="tweet-item" key={tweet._id}>
                 <div className="profile-img">
@@ -67,7 +67,12 @@ function Home() {
               </div>
             )
           })
-            }
+            : (
+              <div className="empty-tweet-list">
+                Be the first to tweet
+              </div>
+            )
+          }
             </div>
         </main>
       </div>

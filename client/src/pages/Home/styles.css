@@ -40,6 +40,12 @@
     flex-direction: column;
 }
 
+.empty-tweet-list {
+  padding: 20px;
+  background-color: #eeeeee;
+  color: gray;
+}
+
 .tweet-item {
     /* width: 80%; */
     display: flex;
