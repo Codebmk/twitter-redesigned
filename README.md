@@ -6,11 +6,11 @@ A place where geeks share knowledge.
 
 ### `React`
 
-Used for creating application interface\
+Used for creating application interface
 
 ### `Node JS`
 
-JS runtime environment for testing application\
+JS runtime environment for testing application
 
 ### `MongoDB`
 
