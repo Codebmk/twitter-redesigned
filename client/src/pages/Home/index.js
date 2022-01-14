@@ -1,8 +1,23 @@
 import SideNav from "../../components/SideNav";
-import tweetsList from "../../data-store/tweets.js";
 import "./styles.css";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import moment from 'moment';
 
 function Home() {
+
+  const [tweetsList, setTweetsList] = useState([]);
+
+  useEffect(() => {
+    // Get All Tweets
+    axios
+      .get('http://localhost:5000/api/tweets')
+      .then(res => {
+        setTweetsList(res.data);
+      })
+      .catch(err => console.log(err));
+  }, [tweetsList]);
+  
   return (
     <div id="home">
       <SideNav />
@@ -18,21 +33,21 @@ function Home() {
           {/* List of tweets */}
           {tweetsList.map(tweet =>{
             return (
-              <div className="tweet-item" key={tweet.id}>
+              <div className="tweet-item" key={tweet._id}>
                 <div className="profile-img">
-                  <img src={`assets/images/${tweet.profile_img}`} alt={`Profile of ${tweet.author}`} />
+                  <img src="assets/images/air-max-1.jpg" alt={`Profile of ${tweet.username}`} />
                 </div>
                 <div className="tweet-content">
                   <div className="tweet-author-label">
-                    <h3 className="tweet-author-name">{tweet.author}</h3>
+                    <h3 className="tweet-author-name">{tweet.username}</h3>
                     <div className="dot-separator"></div>
-                    <h3 className="tweet-author-handle">{tweet.handle}</h3>
+                    <h3 className="tweet-author-handle">{tweet.user_location}</h3>
                     <div className="dot-separator"></div>
-                    <h3 className="tweet-time-created">{tweet.time_created}</h3>
+                    <h3 className="tweet-time-created">{moment(tweet.date_of_creation, "hmm").format("LT")}</h3>
                   </div>
                   <div className="tweet-message">
                     <p>{tweet.text_message}</p>
-                    <img src={`assets/images/${tweet.image}`} alt="Profile of Kenny Rogers" />
+                    <img src="assets/images/joy.jpg" alt="Profile of Kenny Rogers" />
                   </div>
                   <div className="tweet-social">
                     <span className="icon">

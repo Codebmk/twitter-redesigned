@@ -1,10 +1,10 @@
 #home {
     display: grid;
-    grid-template-columns: 20% 60% 20%;
+    grid-template-columns: 20% 55% 25%;
 }
 
 #main-container {
-    margin: 25px 20%;
+    margin: 25px 15%;
 }
 
 .add-tweet-form {
@@ -41,6 +41,7 @@
 }
 
 .tweet-item {
+    /* width: 80%; */
     display: flex;
     border: 1px solid #eeeeee;
     border-radius: 25px;
@@ -68,6 +69,7 @@
 .tweet-time-created {
     font-weight: 400;
     color: #6e6e6e;
+    margin: 0 10px;
 }
 
 .dot-separator {
@@ -85,7 +87,7 @@
 }
 
 .tweet-message img {
-    width: 100%;
+    width: auto;
     height: 300px;
     object-fit: cover;
     border-radius: 20px;
