@@ -1,0 +1,82 @@
+#side-nav {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    background-color: #f7f7f7;
+    padding: 25px;
+    position: sticky;
+    top: 0;
+    bottom: 0;
+}
+
+.profile-details>.tweet-post-btn {
+    height: 35px;
+    padding: 5px 20px;
+    font-weight: 800;
+    color: #850000;
+    cursor: pointer;
+}
+
+.sidenav__brandNameDisplay {
+    display: flex;
+    font-size: 30px !important;
+    align-items: center;
+    color: #850000 !important;
+    margin: 15px 0;
+}
+
+#side-nav-links {
+    list-style: none;
+}
+
+#profile-name {
+    font-weight: bold;
+}
+
+#side-nav-links .nav-link {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+#side-nav-links .nav-link:hover{
+    background-color: #ffe2e2;
+    border-radius: 25px;
+    color: #850000 !important;
+}
+
+.nav-link>.sidenav__listItemIcon{
+    font-size: 25px !important;
+    margin-right: 15px;
+}
+
+#side-nav-links .nav-link a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 800;
+}
+
+#side-nav-links .nav-link:hover a {
+    color: #850000 !important;
+}
+
+.sidenav__profileDisplay {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #d4d4d4;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+}
+
+.sidenav__profileDisplay img {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    margin-right: 10px;
+    padding: 0;
+}
+
+.profile-details {
+    display: flex;
+    flex-direction: column;
+}

@@ -1,8 +1,13 @@
 import SideNav from "../../components/SideNav";
-import "./styles.css";
+import "./home.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import moment from 'moment';
+import TweetPost from "../../components/TweetPost";
+import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
+import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
+import GifIcon from '@mui/icons-material/Gif';
+import CodeIcon from '@mui/icons-material/Code';
+import ArticleIcon from '@mui/icons-material/Article';
 
 function Home() {
 
@@ -23,9 +28,19 @@ function Home() {
       <SideNav />
       <div id="main-container">
         <main id="main">
+          <header className="home__title">
+            <h3>Home</h3>
+            <AutoFixHighIcon />
+          </header>
           {/* Post tweet message */}
           <form className="add-tweet-form">
             <textarea type="text" placeholder="Tweet your thoughts" id="tweet-message"></textarea>
+            <div className="home__postTweetOptions">
+              <AddPhotoAlternateIcon className="home__postTweetOptionIcon" />
+              <GifIcon className="home__postTweetOptionIcon" />
+              <CodeIcon className="home__postTweetOptionIcon" />
+              <ArticleIcon className="home__postTweetOptionIcon" />
+            </div>
             <button id="post-tweet">Send</button>
           </form>
 
@@ -33,38 +48,7 @@ function Home() {
           {/* List of tweets */}
           {tweetsList ? tweetsList.map(tweet =>{
             return (
-              <div className="tweet-item" key={tweet._id}>
-                <div className="profile-img">
-                  <img src="assets/images/air-max-1.jpg" alt={`Profile of ${tweet.username}`} />
-                </div>
-                <div className="tweet-content">
-                  <div className="tweet-author-label">
-                    <h3 className="tweet-author-name">{tweet.username}</h3>
-                    <div className="dot-separator"></div>
-                    <h3 className="tweet-author-handle">{tweet.user_location}</h3>
-                    <div className="dot-separator"></div>
-                    <h3 className="tweet-time-created">{moment(tweet.date_of_creation, "hmm").format("LT")}</h3>
-                  </div>
-                  <div className="tweet-message">
-                    <p>{tweet.text_message}</p>
-                    <img src="assets/images/joy.jpg" alt="Profile of Kenny Rogers" />
-                  </div>
-                  <div className="tweet-social">
-                    <span className="icon">
-                      <i>Reply</i>{tweet.replies}
-                    </span>
-                    <span className="icon">
-                      <i>Retweet</i>{tweet.retweets}
-                    </span>
-                    <span className="icon">
-                      <i>Like</i>{tweet.likes}
-                    </span>
-                    <span className="icon">
-                      <i>Share</i>
-                    </span>
-                  </div>
-                </div>
-              </div>
+              <TweetPost tweet={tweet} />
             )
           })
             : (
@@ -103,30 +87,6 @@ function Home() {
           </li>
         </ul>
         <h4>You may also like these</h4>
-        <ul className="aside-nav">
-            <li className="nav-link">
-                <img src="assets/images/air-max-1.jpg" alt="Profile of Kenny Rogers" />
-                <div className="profile-details">
-                    <h4>Arthur Kigulu</h4>
-                    <small>Head of Engineering, Tesla</small>
-                </div>
-            </li>
-            <li className="nav-link">
-                <img src="assets/images/air-max-1.jpg" alt="Profile of Kenny Rogers" />
-                <div className="profile-details">
-                    <h4>Arthur Kigulu</h4>
-                    <small>Head of Engineering, Tesla</small>
-                </div>
-            </li>
-            <li className="nav-link">
-                <img src="assets/images/air-max-1.jpg" alt="Profile of Kenny Rogers" />
-                <div className="profile-details">
-                    <h4>Arthur Kigulu</h4>
-                    <small>Head of Engineering, Tesla</small>
-                </div>
-            </li>
-        </ul>
-        <h4>My Chats</h4>
         <ul className="aside-nav">
             <li className="nav-link">
                 <img src="assets/images/air-max-1.jpg" alt="Profile of Kenny Rogers" />
