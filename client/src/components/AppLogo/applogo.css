@@ -1,0 +1,7 @@
+.applogo{
+    display: flex;
+    font-size: 30px !important;
+    align-items: center;
+    color: #850000 !important;
+    margin: 15px 0;
+}

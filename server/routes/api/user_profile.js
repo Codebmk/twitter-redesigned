@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const config = require("config");
 
 const UserProfile = require("../../models/user_profile");
 
@@ -37,23 +39,34 @@ router.post('/', (req, res) => {
                     newUserProfile.password = hash;
                     newUserProfile
                         .save()
-                        .then(user_profile => res.json({
-                            user: {
-                                id: user_profile.id,
-                                username: user_profile.username,
-                                description: user_profile.description,
-                                email_address: user_profile.email_address,
-                                location: user_profile.location,
-                                date_of_birth: user_profile.date_of_birth,
-                                isVerified: user_profile.isVerified,
-                                user_handle: user_profile.userhandle,
-                                website_url: user_profile.website_url
-                            }
-                        }));
+                        .then(user_profile => {
+                            console.log(user_profile);
+                            jwt.sign(
+                                { id: user_profile.id },
+                                config.get('jwtSecret'),
+                                { expiresIn: 3600 },
+                                (err, token) => {
+                                    if(err) throw err;
+                                    res.json({
+                                        token,
+                                        user: {
+                                            id: user_profile.id,
+                                            username: user_profile.username,
+                                            description: user_profile.description,
+                                            email_address: user_profile.email_address,
+                                            location: user_profile.location,
+                                            date_of_birth: user_profile.date_of_birth,
+                                            isVerified: user_profile.isVerified,
+                                            user_handle: user_profile.userhandle,
+                                            website_url: user_profile.website_url,
+                                            password : user_profile.password
+                                        }
+                                    });
+                                }
+                            );
+                        })
                 })
             });
-
-            
         });
 });
     

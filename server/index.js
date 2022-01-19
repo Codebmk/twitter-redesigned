@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const express = require("express");
+const cors = require("cors");
 
 const user_profiles = require("./routes/api/user_profile");
 const tweets = require("./routes/api/tweets");
@@ -8,7 +9,7 @@ const likes = require("./routes/api/likes");
 const user_following = require("./routes/api/user_following");
 
 const app = express();
-
+app.use(cors());
 app.use(express.json());
 
 // Connect to Mongo

@@ -8,15 +8,12 @@ import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import ListIcon from '@mui/icons-material/List';
 import LogoutIcon from '@mui/icons-material/Logout';
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import AppLogo from "../AppLogo";
 
 export default function SideNav() {
     return (
         <nav id="side-nav">
-            <div className="sidenav__brandNameDisplay">
-                <ArrowBackIosIcon/><TwitterIcon/><ArrowForwardIosIcon/>
-            </div>
+            <AppLogo />
             <div className="sidenav__profileDisplay">
                 <img src="assets/images/air-max-1.jpg" alt="Profile of Kenny Rogers" />
                 <div className="profile-details">

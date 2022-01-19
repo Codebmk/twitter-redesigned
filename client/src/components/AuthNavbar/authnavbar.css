@@ -1,0 +1,31 @@
+.authnavbar {
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    box-shadow: 2px 5px 10px #d1d1d1;
+    position: sticky;
+    top: 0;
+}
+
+.authnavbar__navBrand {
+    display: flex;
+    align-items: center;
+    color: #850000;
+}
+
+.authnavbar__navBrand h3 {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.authnavbar__navbarLinks {
+    list-style: none;
+    display: flex;
+}
+
+.authnavbar__navbarLink {
+    margin-left: 15px;
+    margin-right: 15px;
+}
